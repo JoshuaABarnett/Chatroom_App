@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Login - Cloud Chat App</title>
+    <script defer src="https://chat-application-274101.uk.r.appspot.com/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      background-color: #F0F0F0;
+      }
+    </style>
+    </script>
+  </head>
+  <body>
+    <form name="Login">
+      Username<input type="text" name="userid" required/>
+      Password<input type="password" name="pswrd" required/>
+      <input type="button" onclick="check(this.form)" value="Login"/>
+      <input type="reset" value="Cancel"/>
+      
+    </form>
+    <script language="javascript">
+     function check(form)/*function to check userid & password*/
+     {
+       /*the following code checks whether the entered userid and password are valid*/
+       if(form.userid.value == "admin" && form.pswrd.value == "camden")
+       {
+         window.location="https://chat-application-274101.uk.r.appspot.com/room_list";/* If user id and password match, opens the target page*/
+       }
+       else
+       {
+         alert("Error Password or Username")/*display error message*/
+       }
+     }
+    </script>
+  </body>
+</html>
